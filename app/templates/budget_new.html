@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+    <div id="budget" class="col-lg-8 col-lg-offset-2"></div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script src="{{ url_for('static', filename='js/react.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/budget_create.js') }}"></script>
+{% endblock %}

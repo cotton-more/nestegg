@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% from "bootstrap/utils.html" import icon %}
+
+{% block page_content %}
+<h1>Budget list</h1>
+
+<div class="row">
+    <div class="col-md-2 col-sm-3">
+        <a href="{{ url_for(main.budget_new) }}" class="btn btn-block btn-success">{{ icon('plus') }} add budget</a>
+    </div>
+
+    {% for b in budgets %}
+    <div class="col-md-2 col-sm-3">
+        <div class="budget-preview-pane center-block">
+            <span>{{ b.name }}</span>
+            <a href="{{ url_for('main.budget', id=b.id) }}" class="btn">{{ icon('th-list') }} view</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
